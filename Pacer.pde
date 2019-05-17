@@ -33,7 +33,7 @@ class Pacer {
   }
   
   void update() {
-   old_loc = loc.copy();
+  // old_loc = loc.copy();
    
    vel.add(acc);
    loc.add(vel);
@@ -46,8 +46,11 @@ class Pacer {
   
   void display() {    
     noStroke();
-    fill(30, 80, 85, 27);
-    circle(loc.x, loc.y, 5);
+    //fill(30, 80, 85, 27);
+    fill(35, 90, 95, 37);
+    circle(loc.x, loc.y, 2);
+    //stroke(30, 80, 85, 27);
+    //line(old_loc.x, old_loc.y, loc.x, loc.y);
     
   }
   

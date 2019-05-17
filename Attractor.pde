@@ -19,7 +19,7 @@ PVector attract(Pacer p) {
   //  strength = get_cur_frc();// * (distance * distance);
     frc.mult(str);
      
-  println("Frc: ", frc.x, frc.y); 
+  //println("Frc: ", frc.x, frc.y); 
     return frc;
 }
 
