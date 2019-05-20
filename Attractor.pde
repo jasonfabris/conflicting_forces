@@ -23,6 +23,11 @@ PVector attract(Pacer p) {
     return frc;
 }
 
+void update(PVector new_loc, float new_str) {
+  loc = new_loc.copy();
+  str = new_str;
+}
+
 void display() {
   
 }

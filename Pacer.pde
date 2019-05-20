@@ -10,10 +10,11 @@ class Pacer {
   PVector vel;
   
   Pacer(float _speed, float _radius) {
-    angle = 0;
+    angle = random(TWO_PI);
     path_radius = _radius;
-    loc = new PVector(cos(angle) * path_radius, sin(angle) * path_radius);
-    speed = _speed;
+    loc = new PVector(cos(angle) * (path_radius/5), sin(angle) * (path_radius/5));
+    loc = new PVector(0,0);
+    speed = _speed; //sqrt(_speed);
     acc = new PVector(0,0);
     vel = new PVector(0,0);
     
@@ -33,7 +34,7 @@ class Pacer {
   }
   
   void update() {
-  // old_loc = loc.copy();
+   //old_loc = loc.copy();
    
    vel.add(acc);
    loc.add(vel);
@@ -47,10 +48,17 @@ class Pacer {
   void display() {    
     noStroke();
     //fill(30, 80, 85, 27);
-    fill(35, 90, 95, 37);
-    circle(loc.x, loc.y, 2);
-    //stroke(30, 80, 85, 27);
-    //line(old_loc.x, old_loc.y, loc.x, loc.y);
+    //fill(35, 90, 95, 37);
+    //point(loc.x, loc.y);
+    //circle(loc.x, loc.y, 2);
+    
+    //pg.fill(35, 90, 95, 97);
+    //pg.circle(loc.x, loc.y, 12);
+    
+    stroke(15, 90, 95, 20);
+    if(frameCount > 1) {
+      line(old_loc.x, old_loc.y, loc.x, loc.y);
+    }
     
   }
   
